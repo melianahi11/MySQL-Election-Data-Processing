@@ -1,30 +1,36 @@
-Project 1 README
+## Project 1 README
 
-* For all of these files, there is no delimiter start or end as 
-it was not specified how the files would be tested/where they should be created. 
-To run these files, add them to schema Penna's "Stored Procedures" and 
-table penna's triggers.MySQL Workbench will automatically add in the correct 
-delimiter lines.
+This repository contains files and instructions for implementing various procedures and triggers in MySQL related to election data processing. Below are details regarding each part of the project along with specific instructions and considerations.
 
+### General Notes
 
-Part2_1: 
-newPenna() instructions specified that we were supposed to show the change 
-"between timestamp T and the last timestamp DIRECTLY preceding". As such, my newPenna
-shows the change between every single timestamp and the one DIRECTLY preceding it even
-if no change in count was made. This procedure will take a long time to run (30+ minutes)
-so you will need to set DBMS CONNECTION READ TIMEOUT to 0 (so it doesn't timeout).
+- **Delimiters**: For all provided files, there is no delimiter specified at the start or end, as the testing methodology was not explicitly outlined. To execute these files, add them to the schema Penna's "Stored Procedures" and table penna's triggers. MySQL Workbench will automatically add the correct delimiter lines.
 
-An improvement in the assignment would have been to specify to ONLY insert times where a 
-change in votes occured.
+---
 
-Part3:
-MySQL boolean values present as 0 and 1. I really hope the assignment didn't mean for us 
-to return the String "TRUE" and "FALSE".
+### Part2_1
 
-Part4_1:
-The triggers don't actually create the updatedtuples, insertedtuples, and deletedtuples 
-tables. You'll have to create them yourself using:
+#### Procedure: `newPenna()`
 
+Instructions specified that we were supposed to show the change "between timestamp T and the last timestamp DIRECTLY preceding". As such, my `newPenna` procedure shows the change between every single timestamp and the one DIRECTLY preceding it even if no change in count was made. This procedure will take a long time to run (30+ minutes), so you will need to set DBMS CONNECTION READ TIMEOUT to 0 (so it doesn't timeout).
+
+An improvement in the assignment would have been to specify to ONLY insert times where a change in votes occurred.
+
+---
+
+### Part3
+
+- **Boolean Values**: MySQL boolean values present as 0 and 1. I really hope the assignment didn't mean for us to return the String "TRUE" and "FALSE".
+
+---
+
+### Part4_1
+
+#### Triggers: `updatedtuples`, `insertedtuples`, `deletedtuples`
+
+The triggers don't actually create the `updatedtuples`, `insertedtuples`, and `deletedtuples` tables. You'll have to create them yourself using the following SQL commands:
+
+```sql
 CREATE TABLE `updatedtuples` (
   `ID` int(11) DEFAULT NULL,
   `Timestamp` datetime DEFAULT NULL,
@@ -72,3 +78,4 @@ CREATE TABLE `deletedtuples` (
   KEY `indtemp` (`Timestamp`),
   KEY `indprecon` (`precinct`)
 );
+```
