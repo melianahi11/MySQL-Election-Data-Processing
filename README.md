@@ -1,10 +1,26 @@
 # Project 1 README
 
-This repository contains files and instructions for implementing various procedures and triggers in MySQL related to election data processing. Below are details regarding each part of the project along with specific instructions and considerations.
+This repository contains files and instructions for implementing various procedures and triggers in MySQL related to election data processing. Below are details regarding each part of the project along with specific instructions and considerations. 
 
 ## General Notes:
 
 - **Delimiters**: For all provided files, there is no delimiter specified at the start or end, as the testing methodology was not explicitly outlined. To execute these files, add them to the schema Penna's "Stored Procedures" and table penna's triggers. MySQL Workbench will automatically add the correct delimiter lines.
+
+## Stored Procedures
+### API1
+Retrieves the number of votes for a candidate in a precinct at a specific timestamp.
+
+### API2
+Determines the winning candidate and their votes on a specific date.
+
+### API3
+Retrieves precincts where a candidate had more votes than their opponent.
+
+### API4
+Determines the winning candidate and their vote percentage in a precinct.
+
+### API5
+Retrieves candidate and their votes containing a specified substring in the precinct name.
 
 ## Part2_1:
 
