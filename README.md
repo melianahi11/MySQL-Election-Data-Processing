@@ -1,4 +1,4 @@
-# Project 1 README
+# MySQL Election Data Processing
 
 This repository contains files and instructions for implementing various procedures and triggers in MySQL related to election data processing. Below are details regarding each part of the project along with specific instructions and considerations. 
 
